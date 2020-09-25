@@ -1,0 +1,5 @@
+version: "3.8"
+services:
+  social-media-api:
+    environment:
+      DB_HOST: host.docker.internal

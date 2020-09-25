@@ -1,0 +1,6 @@
+.git
+.cache
+.eslintrc
+.vscode
+*.md
+node_modules

@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  social-media-api:
+    container_name: social-media-api
+    build: .
+    ports:
+      - 8080:8080
+    environment:
+      DB_NAME: social_media_dev
+      DB_USER: myspace_tom
+      DB_PASS: supersecret
+      DB_HOST: postgresql
+      DB_PORT: 8081
+    depends_on:
+      - postgresql
+    command: ["./wait-for-it.sh", "postgresql:8081", "--", "npm", "start"]
+      
+  postgresql:
+    image: postgres:10
+    container_name: social-media-db
+    volumes:
+      - social-media-data:/var/lib/postgresql/data
+    ports:
+      - 8081:5432
+    environment:
+      POSTGRES_USER: myspace_tom
+      POSTGRES_PASSWORD: supersecret
+      POSTGRES_DB: social_media
+volumes:
+  social-media-data: {}
