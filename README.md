@@ -14,7 +14,7 @@
 
 ```sh
 # HTTPS
-$ git clone https://github.com/aichbauer/express-rest-api-boilerplate.git
+$ git clone https://github.com/jondhinkle/social_media.git
 ```
 
 ## 2. Build Database
