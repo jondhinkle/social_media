@@ -15,9 +15,15 @@
 ```sh
 # HTTPS
 $ git clone https://github.com/jondhinkle/social_media.git
+$ cd social_media
 ```
 
-## 2. Build Database
+## 2. Install Dependencies
+```sh
+$ npm install
+```
+
+## 3. Build Database
 
 ```sh
 $ docker build -t sm_db .
@@ -29,7 +35,7 @@ Once the database is running, you initialize the tables with
 $ DB_PORT=<DATABASE PORT> npm run db-migrate
 ```
 
-## 3. Seed Database
+## 4. Seed Database
 
 At this point, the database tables should be initialized by the app, but they will be empty, so we will need to populate them.
 
@@ -45,7 +51,7 @@ and, if you want to revert the seed, run
 ```sh
 $ DB_PORT=<DATABASE PORT> npm run db-seed-undo
 ```
-## 4. Start the App
+## 5. Start the App
 
 Finally, after seeding the database, you start the app with
 ```sh
