@@ -58,7 +58,9 @@ Finally, after seeding the database, you start the app with
 $ DB_PORT=<DATABASE PORT> API_PORT=<API PORT> npm start
 ```
 
-# API
+# API (for testing)
+
+You can use any testing mechanism you'd like (eg. web browser, CURL, postman, insomnia)
 
 ## GET /public/users
 Fetch users with pagination (defaults to a fetch size of 10)
@@ -82,6 +84,8 @@ localhost:8080/public/users/237
 
 ## GET /public/users/:id/friends
 Get a single user's friends
+
+Note: The response json values in the 'friends' key are users, and thus their ids can be used in other calls (eg. GET /public/users/:id)
 
 Example url
 ```
